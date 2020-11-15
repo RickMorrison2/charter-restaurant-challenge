@@ -1,0 +1,13 @@
+.noneFound {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.restaurant {
+    font-weight: 400;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid black;
+}

@@ -147,14 +147,6 @@ const Table = () => {
         console.log('onSearchSubmit', term);
     };
 
-    const onPageChanged = (data) => {
-        const { scopedPage, totalPages, pageLimit } = data;
-        const offset = (scopedPage - 1) * pageLimit;
-        setCurrentRestaurants(restaurants.slice(offset, offset + pageLimit));
-        setCurrentPage(scopedPage);
-        setTotalPages(totalPages);
-    };
-
     return (
         <div className={Classes.container}>
             <SearchBar
@@ -191,6 +183,7 @@ const Table = () => {
                                 State
                             </button>
                             <select
+                                className={Classes.select}
                                 placeholder="Select State"
                                 value={selectedState}
                                 onChange={(e) =>
@@ -222,6 +215,7 @@ const Table = () => {
                                 Genre(s)
                             </button>
                             <select
+                                className={Classes.select}
                                 value={selectedGenre}
                                 onChange={(e) =>
                                     setSelectedGenre(e.target.value)

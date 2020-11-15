@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
+import * as Classes from './RestaurantList.module.css';
 
 const RestaurantList = ({
     restaurants,
@@ -56,14 +57,8 @@ const RestaurantList = ({
         return (
             <React.Fragment>
                 <tr>
-                    <td>No restaurants found.</td>
+                    <td className={Classes.noneFound}>No restaurants found.</td>
                 </tr>
-                <Pagination
-                    totalRecords={filteredRestaurants.length}
-                    pageLimit={10}
-                    pageNeighbors={0}
-                    onPageChanged={onPageChanged}
-                />
             </React.Fragment>
         );
     }
@@ -72,7 +67,7 @@ const RestaurantList = ({
         <React.Fragment>
             {displayRestaurants.map((el) => {
                 return (
-                    <tr key={el.id}>
+                    <tr className={Classes.restaurant} key={el.id}>
                         <td>{el.name}</td>
                         <td>
                             {el.city.includes(',')
