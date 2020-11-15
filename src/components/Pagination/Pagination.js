@@ -120,11 +120,7 @@ const Pagination = ({totalRecords = null, pageLimit = 10, pageNeighbors = 0, onP
         </nav>
     )
 
-    return (
-        <div>
-            {pagination}
-        </div>
-    )
+    return pagination;
 }
 
 export default Pagination;
