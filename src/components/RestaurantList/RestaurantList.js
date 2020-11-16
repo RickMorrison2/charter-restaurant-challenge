@@ -13,35 +13,41 @@ const RestaurantList = ({
     const [totalPages, setTotalPages] = useState(1);
 
     const filteredRestaurants = [...restaurants]
-        .filter((e) => {
+        .filter((restaurant) => {
             if (selectedState === 'All') {
                 return true;
             }
-            return e.state === selectedState;
+            return restaurant.state === selectedState;
         })
-        .filter((e) => {
+        .filter((restaurant) => {
             if (selectedGenre === 'All') {
                 return true;
             }
-            return e.genre.includes(selectedGenre);
+            return restaurant.genre.includes(selectedGenre);
         })
-        .filter((e) => {
+        .filter((restaurant) => {
             if (searchText === '') {
                 return true;
             }
             return (
-                e.name.toLowerCase().includes(searchText.toLowerCase()) ||
-                e.city.toLowerCase().includes(searchText.toLowerCase()) ||
-                e.genre.toLowerCase().includes(searchText.toLowerCase())
+                restaurant.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase()) ||
+                restaurant.city
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase()) ||
+                restaurant.genre
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase())
             );
         });
 
     const displayRestaurants = [...filteredRestaurants]
-        .filter((e) => {
+        .filter((restaurant) => {
             if (currentRestaurants.length === 0) {
                 return true;
             }
-            return currentRestaurants.includes(e);
+            return currentRestaurants.includes(restaurant);
         })
         .slice(0, 10);
 
