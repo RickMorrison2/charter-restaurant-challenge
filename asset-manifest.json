@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/charter-restaurant-challenge/static/css/main.5f0046ea.chunk.css",
-    "main.js": "/charter-restaurant-challenge/static/js/main.8d216c80.chunk.js",
-    "main.js.map": "/charter-restaurant-challenge/static/js/main.8d216c80.chunk.js.map",
+    "main.js": "/charter-restaurant-challenge/static/js/main.e9285260.chunk.js",
+    "main.js.map": "/charter-restaurant-challenge/static/js/main.e9285260.chunk.js.map",
     "runtime-main.js": "/charter-restaurant-challenge/static/js/runtime-main.f651cb12.js",
     "runtime-main.js.map": "/charter-restaurant-challenge/static/js/runtime-main.f651cb12.js.map",
-    "static/js/2.e64460bc.chunk.js": "/charter-restaurant-challenge/static/js/2.e64460bc.chunk.js",
-    "static/js/2.e64460bc.chunk.js.map": "/charter-restaurant-challenge/static/js/2.e64460bc.chunk.js.map",
+    "static/js/2.4b4e842f.chunk.js": "/charter-restaurant-challenge/static/js/2.4b4e842f.chunk.js",
+    "static/js/2.4b4e842f.chunk.js.map": "/charter-restaurant-challenge/static/js/2.4b4e842f.chunk.js.map",
     "static/js/3.668d2bf1.chunk.js": "/charter-restaurant-challenge/static/js/3.668d2bf1.chunk.js",
     "static/js/3.668d2bf1.chunk.js.map": "/charter-restaurant-challenge/static/js/3.668d2bf1.chunk.js.map",
     "index.html": "/charter-restaurant-challenge/index.html",
     "static/css/main.5f0046ea.chunk.css.map": "/charter-restaurant-challenge/static/css/main.5f0046ea.chunk.css.map",
-    "static/js/2.e64460bc.chunk.js.LICENSE.txt": "/charter-restaurant-challenge/static/js/2.e64460bc.chunk.js.LICENSE.txt"
+    "static/js/2.4b4e842f.chunk.js.LICENSE.txt": "/charter-restaurant-challenge/static/js/2.4b4e842f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f651cb12.js",
-    "static/js/2.e64460bc.chunk.js",
+    "static/js/2.4b4e842f.chunk.js",
     "static/css/main.5f0046ea.chunk.css",
-    "static/js/main.8d216c80.chunk.js"
+    "static/js/main.e9285260.chunk.js"
   ]
 }
