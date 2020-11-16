@@ -14,9 +14,6 @@ const Table = () => {
     const [selectedGenre, setSelectedGenre] = useState('All');
     const [genres, setGenres] = useState(['All']);
     const [searchText, setSearchText] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
-    const [currentRestaurants, setCurrentRestaurants] = useState([]);
 
     const states = [
         'All',
@@ -147,6 +144,14 @@ const Table = () => {
         console.log('onSearchSubmit', term);
     };
 
+    let caret = '';
+
+    if (sortConfig.direction && sortConfig.direction === 'asc') {
+        caret = '\u25B2';
+    } else if (sortConfig.direction && sortConfig.direction === 'desc') {
+        caret = '\u25bc';
+    }
+
     return (
         <div className={Classes.container}>
             <SearchBar
@@ -162,7 +167,7 @@ const Table = () => {
                                 type="button"
                                 onClick={() => reqSort('name')}
                             >
-                                Name
+                                Name {sortConfig.key === 'name' ? caret : null}
                             </button>
                         </th>
                         <th>
@@ -171,7 +176,7 @@ const Table = () => {
                                 type="button"
                                 onClick={() => reqSort('city')}
                             >
-                                City
+                                City {sortConfig.key === 'city' ? caret : null}
                             </button>
                         </th>
                         <th>
@@ -180,7 +185,8 @@ const Table = () => {
                                 type="button"
                                 onClick={() => reqSort('state')}
                             >
-                                State
+                                State{' '}
+                                {sortConfig.key === 'state' ? caret : null}
                             </button>
                             <select
                                 className={Classes.select}
@@ -203,7 +209,8 @@ const Table = () => {
                                 type="button"
                                 onClick={() => reqSort('telephone')}
                             >
-                                Phone Number
+                                Phone Number{' '}
+                                {sortConfig.key === 'telephone' ? caret : null}
                             </button>
                         </th>
                         <th>
@@ -212,7 +219,8 @@ const Table = () => {
                                 type="button"
                                 onClick={() => reqSort('genre')}
                             >
-                                Genre(s)
+                                Genre(s){' '}
+                                {sortConfig.key === 'genre' ? caret : null}
                             </button>
                             <select
                                 className={Classes.select}
@@ -233,7 +241,6 @@ const Table = () => {
                 <tbody>
                     <RestaurantList
                         restaurants={restaurants}
-                        currentRestaurants={currentRestaurants}
                         selectedState={selectedState}
                         selectedGenre={selectedGenre}
                         searchText={searchText}
