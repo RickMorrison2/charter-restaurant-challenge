@@ -6,6 +6,7 @@ const Pagination = ({
     pageLimit = 10,
     pageNeighbors = 0,
     onPageChanged,
+    currentPage,
 }) => {
     pageLimit = typeof pageLimit === 'number' ? pageLimit : 10;
     totalRecords = typeof totalRecords === 'number' ? totalRecords : 0;
@@ -14,8 +15,6 @@ const Pagination = ({
             ? Math.max(0, Math.min(pageNeighbors, 2))
             : 0;
     const totalPages = Math.ceil(totalRecords / pageLimit);
-
-    const [currentPage, setCurrentPage] = useState(1);
 
     const LEFT_PAGE = 'LEFT';
     const RIGHT_PAGE = 'RIGHT';
@@ -110,14 +109,16 @@ const Pagination = ({
                     {pages.map((page, index) => {
                         if (page === LEFT_PAGE)
                             return (
-                                <li key={index} onClick={handleMoveLeft}>
-                                    <h4
-                                        className={`${
-                                            currentPage === page
-                                                ? 'Classes.active'
-                                                : ''
-                                        }`}
-                                    >
+                                <li
+                                    key={index}
+                                    onClick={handleMoveLeft}
+                                    className={`${
+                                        currentPage === page
+                                            ? `${Classes.active}`
+                                            : ''
+                                    }`}
+                                >
+                                    <h4>
                                         <span>&laquo;</span>
                                         <span>Previous</span>
                                     </h4>
@@ -126,14 +127,16 @@ const Pagination = ({
 
                         if (page === RIGHT_PAGE)
                             return (
-                                <li key={index} onClick={handleMoveRight}>
-                                    <h4
-                                        className={`${
-                                            currentPage === page
-                                                ? 'Classes.active'
-                                                : ''
-                                        }`}
-                                    >
+                                <li
+                                    key={index}
+                                    onClick={handleMoveRight}
+                                    className={`${
+                                        currentPage === page
+                                            ? `${Classes.active}`
+                                            : ''
+                                    }`}
+                                >
+                                    <h4>
                                         <span>&raquo;</span>
                                         <span>Next</span>
                                     </h4>
@@ -141,16 +144,16 @@ const Pagination = ({
                             );
 
                         return (
-                            <li key={index} onClick={handleClick(page)}>
-                                <h4
-                                    className={`${
-                                        currentPage === page
-                                            ? 'Classes.active'
-                                            : ''
-                                    }`}
-                                >
-                                    {page}
-                                </h4>
+                            <li
+                                key={index}
+                                onClick={handleClick(page)}
+                                className={`${
+                                    currentPage === page
+                                        ? `${Classes.active}`
+                                        : ''
+                                }`}
+                            >
+                                <h4>{page}</h4>
                             </li>
                         );
                     })}

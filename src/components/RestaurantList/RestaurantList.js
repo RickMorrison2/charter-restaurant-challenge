@@ -89,6 +89,7 @@ const RestaurantList = ({
                 pageLimit={10}
                 pageNeighbors={0}
                 onPageChanged={onPageChanged}
+                currentPage={currentPage}
             />
         </React.Fragment>
     );

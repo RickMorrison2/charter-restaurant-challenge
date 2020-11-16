@@ -22,3 +22,11 @@ li {
 h4 {
     color: #ffffff;
 }
+
+.active {
+    border: 2px solid black;
+}
+
+.active h4 {
+    color: black;
+}
