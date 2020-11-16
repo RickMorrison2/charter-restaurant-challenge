@@ -7,7 +7,7 @@ import * as Classes from './Table.module.css';
 const Table = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [sortConfig, setSortConfig] = useState({
-        key: null,
+        key: 'name',
         direction: 'asc',
     });
     const [selectedState, setSelectedState] = useState('All');
@@ -145,7 +145,6 @@ const Table = () => {
     };
 
     let caret = '';
-
     if (sortConfig.direction && sortConfig.direction === 'asc') {
         caret = '\u25B2';
     } else if (sortConfig.direction && sortConfig.direction === 'desc') {
